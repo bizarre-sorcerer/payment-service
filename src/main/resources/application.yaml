@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: payment-service
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/paymentDb?ApplicationName=${spring.application.name}
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  springdoc:
+    api-docs:
+      enabled: true
+    swagger-ui:
+      enabled: true
